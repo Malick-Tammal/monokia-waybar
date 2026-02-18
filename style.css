@@ -1,0 +1,241 @@
+@import "./colors.css";
+
+* {
+  font-family: "SF Pro", "Liga SFMonoNerdFont";
+  font-weight: 600;
+  background: transparent;
+  transition: all 100ms ease;
+}
+
+/*  INFO: Modules */
+.modules-left,
+.modules-right {
+  background-color: @BG;
+  border: 1px solid @BOR;
+  margin: 10px 10px 1px 10px;
+  border-radius: 15;
+  padding: 5px;
+  font-size: 11px;
+}
+
+.modules-left {
+  padding: 5px 0 5px 5px;
+}
+
+/*  INFO: Workspaces (center) */
+#workspaces {
+  background-color: @BG;
+  border: 1px solid @BOR;
+  border-radius: 50px;
+  margin: 10px 0 1px 0;
+  padding: 0px 2px;
+  font-size: 12px;
+}
+
+#workspaces button {
+  color: @FG;
+  background: @DARK2;
+  border-radius: 15px;
+  padding: 1px 5px;
+  margin: 10px 7px;
+  min-height: 0px;
+  transition: min-width 200ms cubic-bezier(0.42, 0.97, 0.52, 1.49);
+  border: 1px solid @DARK3;
+}
+
+#workspaces button.empty {
+  color: @GRAY0;
+}
+
+#workspaces button.active {
+  color: @DARK;
+  background: @GREEN;
+  min-width: 70px;
+  box-shadow: 0px 0px 0px 4px @GREEN1;
+  border: none;
+}
+
+#workspaces button.active:hover {
+  background: @GREEN0;
+}
+
+/*  HACK: Right module */
+
+/*  INFO: Power */
+#custom-power {
+  padding: 0 10px;
+  background-color: @RED;
+  border-radius: 10px;
+  color: @RED2;
+  font-weight: 900;
+  border: 1px solid @RED0;
+}
+
+#custom-power:hover {
+  background: @RED0;
+}
+
+/*  INFO: Battery */
+#battery {
+  padding: 0 13px;
+  background: @ORANGE;
+  border-radius: 10px;
+  color: @ORANGE2;
+  margin: 0px 5px;
+  font-weight: 700;
+  border: 1px solid @ORANGE0;
+}
+
+#battery.plugged,
+#battery.charging {
+  background: @GREEN;
+  border: 1px solid @GREEN0;
+}
+
+#battery.plugged:hover,
+#battery.charging:hover {
+  background: @GREEN0;
+}
+
+#battery:hover {
+  background: @ORANGE0;
+}
+
+/*  INFO: Network */
+#network {
+  padding: 0 10px;
+  background: @PURPLE;
+  border-radius: 10px;
+  color: @PURPLE2;
+  font-weight: 700;
+  border: 1px solid @PURPLE0;
+}
+
+#network:hover {
+  background: @PURPLE0;
+}
+
+/*  INFO: Audio */
+#pulseaudio {
+  padding: 0 10px;
+  background: @BLUE;
+  border-radius: 10px;
+  color: @BLUE2;
+  margin: 0px 5px 0px 0px;
+  font-weight: 700;
+  border: 1px solid @BLUE0;
+}
+
+#pulseaudio.muted {
+  background: @DARK2;
+  color: @FG;
+}
+
+#pulseaudio:hover {
+  background: @BLUE0;
+}
+
+/*  INFO: Bluetooth */
+#bluetooth {
+  padding: 0 13px 0 10px;
+  background: @GREEN;
+  border-radius: 10px;
+  color: @GREEN2;
+  margin: 0px 5px 0px 0px;
+  font-weight: 700;
+  border: 1px solid @GREEN0;
+}
+
+#bluetooth:hover {
+  background: @GREEN0;
+}
+
+/*  INFO: Tray */
+#tray {
+  padding: 0 13px 0 10px;
+  background: @GRAY;
+  border-radius: 3px;
+  color: @FG;
+  margin: 0px 5px 0px 0px;
+  font-size: 20px;
+}
+
+#tray menu {
+  background: @BG;
+  color: @FG;
+  border: 1px solid @BOR;
+}
+
+#tray:hover {
+  background: @GRAY0;
+}
+/*  HACK: Left module */
+
+/*  INFO: Clock */
+#clock.hours,
+#clock.minutes,
+#clock.separator {
+  font-size: 19px;
+  font-weight: 900;
+  font-family: "SF Pro Rounded";
+  color: @FG;
+  letter-spacing: -1px;
+}
+
+#clock.hours {
+  margin-left: 10px;
+}
+
+#clock.minutes {
+  color: @YELLOW;
+  margin-left: 1px;
+}
+#clock.separator {
+  margin: 0 2px;
+}
+
+/*  INFO: Notification */
+#custom-notifications {
+  padding: 0 13px 0 10px;
+  background: @ORANGE;
+  border-radius: 10px;
+  color: @ORANGE2;
+  margin: 0px 10px 0px 0px;
+  font-weight: 700;
+  border: 1px solid @ORANGE0;
+}
+
+#custom-notifications:hover {
+  background: @ORANGE0;
+}
+
+/*  INFO: Active app */
+#window {
+  margin: 0 10px 0 10px;
+  padding-left: 10px;
+  font-size: 12px;
+}
+
+/*  HACK: Others */
+
+/*  INFO: Tooltip */
+tooltip {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+tooltip * {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+tooltip label {
+  margin-top: 5px;
+  border-radius: 15px;
+  border: 1px solid @BOR;
+  background: @BG;
+  padding: 8px;
+  color: @FG;
+  font-size: 12px;
+}

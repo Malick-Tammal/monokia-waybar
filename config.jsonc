@@ -1,0 +1,172 @@
+{
+  "layer": "top",
+  "height": 30,
+  "modules-left": [
+    "custom/notifications",
+    "clock#hours",
+    "clock#separator",
+    "clock#minutes",
+    "hyprland/window",
+  ],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+    "tray",
+    "bluetooth",
+    "pulseaudio",
+    "network",
+    "battery",
+    "custom/power",
+  ],
+  // --  INFO: Power
+  "custom/power": {
+    "format": "⏻",
+    // "on-click": "~/.config/rofi/powermenu/script.sh",
+    "on-click": "qs ipc call powermenu toggle",
+    "tooltip-format": "Power",
+  },
+  // --  INFO: Battery
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20,
+    },
+    "format": "{icon} {capacity}%",
+    "tooltip-format": "{capacity}% {timeTo}",
+    "rotate": 0,
+    "format-charging": "{icon} {capacity}% <span></span>",
+    "format-plugged": "{icon} {capacity}% <span></span>",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "on-click-right": "pkill waybar & hyprctl dispatch exec waybar",
+    "on-click": "~/.config/rofi/powerprofiles/script.sh",
+  },
+  // --  INFO: Network
+  "network": {
+    "tooltip": true,
+    "format": "󰅛  Disabled",
+    "format-wifi": "{icon}   {essid}",
+    "format-icons": ["󰤟", "󰤢", "󰤥"],
+    "rotate": 0,
+    "format-ethernet": "󰈀 ",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": "Disconnected",
+    "tooltip-format-disconnected": "There is no connection",
+    "on-click": "nmgui",
+    "on-click-right": "nm-connection-editor",
+    "interval": 2,
+  },
+  // --  INFO: Audio
+  "pulseaudio": {
+    "format": "{icon}   {volume}%",
+    "rotate": 0,
+    "format-muted": "婢 Muted",
+    "tooltip-format": "{icon}   {desc} | {volume}%",
+    "scroll-step": 2,
+    "reverse-scrolling": 1,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "~/.config/hypr/scripts/swayosd.sh --mute",
+  },
+  //  INFO : Workspaces
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons": {
+      // "1": "",
+      // "2": "",
+      // "3": "",
+      // "4": "󰉋",
+      // "5": "󰈔",
+      // "6": "󰈔",
+      "active": "󰫢",
+      // "active": "",
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+    },
+  },
+  // --  INFO: Active app
+  "hyprland/window": {
+    "format": "{title}",
+    "icon": true,
+    "icon-size": 17,
+    "separate-outputs": true,
+    "rewrite": {
+      "nv": "  - neovim",
+      "(^\\S+ \\S+ \\S+ \\S+ \\S+ \\S+).*[-|—] (.*)": "$1... - $2",
+      "(^\\S+ \\S+ \\S+ \\S+ \\S+ \\S+).*": "$1...",
+    },
+  },
+  // --  INFO: Clock
+  "clock#hours": {
+    "format": "{:%H} ",
+    "interval": 1,
+    "tooltip": false,
+  },
+  "clock#separator": {
+    "format": ":",
+    "tooltip": false,
+  },
+  "clock#minutes": {
+    "format": "{:%M}",
+    "interval": 1,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "format": {
+        "today": "<span color='#FFD866'><b>{}</b></span>",
+      },
+    },
+  },
+  // --  INFO: Notifications
+  "custom/notifications": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/notifications.sh",
+    "on-click": "swaync-client -t -sw",
+    "tooltip-format": "Notifications",
+    "interval": 5,
+  },
+  // --  INFO: Display backlight
+  "backlight": {
+    "device": "intel_backlight",
+    "rotate": 0,
+    "format": "{icon}",
+    "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
+    "tooltip-format": "{percent}% Brightness",
+    "scroll-step": 1,
+    "min-length": 2,
+  },
+  // --  INFO: Tray
+  "tray": {
+    "icon-size": 16,
+  },
+  // --  INFO: Bluetooth
+  "bluetooth": {
+    "format": "  {status}",
+    "format-disabled": "",
+    "format-connected": "  {device_alias}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "overskride",
+    "on-click-right": "sh -c 'bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on'",
+  },
+}

@@ -1,0 +1,50 @@
+/*----------------------------------------------------------*/
+/*--  HACK: Colors --*/
+/*----------------------------------------------------------*/
+
+/*  INFO: Normal colors */
+@define-color DARK #1D1E19;
+@define-color DARK1 #282922;
+@define-color DARK2 #33342B;
+@define-color DARK3 #3D4035;
+
+@define-color WHITE #FDFFF1;
+
+@define-color GREEN0 #BAE391;
+@define-color GREEN #A9DC76;
+@define-color GREEN1 #658447;
+@define-color GREEN2 #222C18;
+
+@define-color RED0 #FF81A0;
+@define-color RED #FF6188;
+@define-color RED1 #993A52;
+@define-color RED2 #33131B;
+
+@define-color ORANGE0 #FDAD85;
+@define-color ORANGE #fc9867;
+@define-color ORANGE1 #975B3E;
+@define-color ORANGE2 #321E15;
+
+@define-color YELLOW0 #FFE085;
+@define-color YELLOW #FFD866;
+@define-color YELLOW1 #99823D;
+@define-color YELLOW2 #332B14;
+
+@define-color PURPLE0 #BCB1F5;
+@define-color PURPLE #AB9DF2;
+@define-color PURPLE1 #6B60A0;
+@define-color PURPLE2 #2A234E;
+
+@define-color BLUE0 #93E3ED;
+@define-color BLUE #78DCE8;
+@define-color BLUE1 #48848B;
+@define-color BLUE2 #182C2E;
+
+@define-color GRAY0 #84867E;
+@define-color GRAY #3D4035;
+@define-color GRAY1 #252620;
+@define-color GRAY2 #0C0D0B;
+
+@define-color BG @DARK;
+@define-color FG @WHITE;
+@define-color BOR @YELLOW;
