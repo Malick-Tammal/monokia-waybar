@@ -128,6 +128,7 @@
 
 #pulseaudio.muted {
   background: @DARK2;
+  border: 1px solid @DARK3;
   color: @FG;
 }
 
