@@ -155,10 +155,12 @@
 #tray {
   padding: 0 13px 0 10px;
   background: @GRAY;
-  border-radius: 3px;
+  border-radius: 10px;
   color: @FG;
   margin: 0px 5px 0px 0px;
   font-size: 20px;
+  font-weight: 700;
+  border: 1px solid @GRAY0;
 }
 
 #tray menu {
@@ -167,9 +169,6 @@
   border: 1px solid @BOR;
 }
 
-#tray:hover {
-  background: @GRAY0;
-}
 /*  HACK: Left module */
 
 /*  INFO: Clock */
