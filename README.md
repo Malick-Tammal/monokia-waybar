@@ -19,3 +19,5 @@ A clean and modern waybar config based on monokai colorsheme
 ### Code editor
 
 ![bar](./preview/3.webp)
+
+i
